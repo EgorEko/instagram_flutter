@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.instagram_flutter">
+    package="com.ego.instagram_flutter">
    <application
         android:label="instagram_flutter"
         android:name="${applicationName}"

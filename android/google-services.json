@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "950568789255",
+    "project_id": "instagram-tut-7100f",
+    "storage_bucket": "instagram-tut-7100f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950568789255:android:352c18aa9c4f24025051a2",
+        "android_client_info": {
+          "package_name": "com.ego.instagram_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950568789255-r7inu26gs2r7405s55r29faoebh6ev87.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdo3SWSgvN5N5kIcXXiwMdektl48TtoxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "950568789255-r7inu26gs2r7405s55r29faoebh6ev87.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "950568789255-9vrrve71r091p251c41mc7gv6q1kl3ss.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ego.instagram"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
