@@ -127,17 +127,16 @@ class _SignupScreen extends State<SignupScreen> {
                     padding: const EdgeInsets.symmetric(vertical: 8),
                   ),
                   GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      child: const Text(
-                        "Sign up",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                      onTap: () {},
+                      child: Container(
+                        child: const Text(
+                          "Sign up",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 8),
-                    ),
-                  )
+                        padding: const EdgeInsets.symmetric(vertical: 8),
+                      ))
                 ],
               ),
             ],
