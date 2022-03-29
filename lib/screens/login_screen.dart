@@ -29,6 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
       _isLoading = true;
     });
     String res = await AuthMethods().loginUser(
+<<<<<<< HEAD
       email: _emailController.text,
       password: _passwordController.text,
     );
@@ -38,6 +39,16 @@ class _LoginScreenState extends State<LoginScreen> {
       showSnackBar(res, context);
     }
 
+=======
+        email: _emailController.text, password: _passwordController.text);
+
+    if (res == "success") {
+      //
+    } else {
+      //
+      showSnackBar(res, context);
+    }
+>>>>>>> 502a66e4e5c882fb26fd00fc2ce2cbb9b02ee09e
     setState(() {
       _isLoading = false;
     });
@@ -119,14 +130,20 @@ class _LoginScreenState extends State<LoginScreen> {
                     padding: const EdgeInsets.symmetric(vertical: 8),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: loginUser,
                     child: Container(
-                      child: const Text(
-                        "Sign up",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
+                      child: _isLoading
+                          ? const Center(
+                              child: CircularProgressIndicator(
+                                color: primaryColor,
+                              ),
+                            )
+                          : const Text(
+                              "Log in",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
                       padding: const EdgeInsets.symmetric(vertical: 8),
                     ),
                   )
