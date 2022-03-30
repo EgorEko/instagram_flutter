@@ -141,21 +141,15 @@ class _LoginScreenState extends State<LoginScreen> {
                   GestureDetector(
                     onTap: navigateToSignup,
                     child: Container(
-                      child: _isLoading
-                          ? const Center(
-                              child: CircularProgressIndicator(
-                                color: primaryColor,
-                              ),
-                            )
-                          : const Text(
-                              "Sign up",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+                      child: const Text(
+                        "Sign up",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       padding: const EdgeInsets.symmetric(vertical: 8),
                     ),
-                  )
+                  ),
                 ],
               ),
             ],
