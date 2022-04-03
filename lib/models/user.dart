@@ -26,7 +26,7 @@ class User {
         'photoUrl': photoUrl,
         'bio': bio,
         'followers': followers,
-        'fokkowing': following,
+        'following': following,
       };
 
   static User fromSnap(DocumentSnapshot snap) {
