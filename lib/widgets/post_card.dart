@@ -165,7 +165,7 @@ class _PostCardState extends State<PostCard> {
                 onPressed: () => Navigator.of(context).push(
                   MaterialPageRoute(
                     builder: (context) => CommentsScreen(
-                      snap: widget.snap['postId'].toString(),
+                      postId: widget.snap['postId'].toString(),
                     ),
                   ),
                 ),

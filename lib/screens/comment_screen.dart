@@ -7,8 +7,9 @@ import 'package:instagram_flutter/widgets/comment_card.dart';
 import 'package:provider/provider.dart';
 
 class CommentsScreen extends StatefulWidget {
-  final snap;
-  const CommentsScreen({Key? key, required this.snap}) : super(key: key);
+  //final snap;
+  final String postId;
+  const CommentsScreen({Key? key, required this.postId}) : super(key: key);
 
   @override
   State<CommentsScreen> createState() => _CommentsScreenState();
@@ -63,7 +64,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
             InkWell(
               onTap: () async {
                 await FirestoreMethods().postComments(
-                  widget.snap['postId'],
+                  widget.postId,
                   _commentController.text,
                   user.uid,
                   user.username,
