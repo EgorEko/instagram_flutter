@@ -125,21 +125,21 @@ class _SignupScreen extends State<SignupScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 19),
               //text field input for username
               TextFieldInput(
                 hintText: 'Enter your username',
                 textInputType: TextInputType.text,
                 textEditingController: _usernameController,
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 19),
               //text field input for email
               TextFieldInput(
                 hintText: 'Enter your email',
                 textInputType: TextInputType.emailAddress,
                 textEditingController: _emailController,
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 19),
               //text field input for password
               TextFieldInput(
                 hintText: 'Enter your password',
