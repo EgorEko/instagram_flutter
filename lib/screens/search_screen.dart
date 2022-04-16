@@ -25,6 +25,7 @@ class _SearchScreenState extends State<SearchScreen> {
       appBar: AppBar(
         backgroundColor: mobileBackgroundColor,
         title: TextFormField(
+          controller: searchController,
           decoration: const InputDecoration(
             labelText: 'Search for a user',
           ),
@@ -57,7 +58,7 @@ class _SearchScreenState extends State<SearchScreen> {
                     return ListTile(
                       leading: CircleAvatar(
                         backgroundImage: NetworkImage(
-                          ((snapshot.data! as dynamic).docs[index]['photoUrl']),
+                          (snapshot.data! as dynamic).docs[index]['photoUrl'],
                         ),
                       ),
                       title: Text(
