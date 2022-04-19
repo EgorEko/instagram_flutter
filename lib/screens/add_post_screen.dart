@@ -61,7 +61,7 @@ class _AddPostStateScreen extends State<AddPostScreen> {
         builder: (context) {
           return SimpleDialog(
             title: const Text('Create a Post'),
-            children: [
+            children: <Widget>[
               SimpleDialogOption(
                 padding: const EdgeInsets.all(20),
                 child: const Text('Take a photo'),
@@ -92,7 +92,7 @@ class _AddPostStateScreen extends State<AddPostScreen> {
                 padding: const EdgeInsets.all(20),
                 child: const Text('Cancel'),
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  Navigator.pop(context);
                 },
               ),
             ],
@@ -114,7 +114,7 @@ class _AddPostStateScreen extends State<AddPostScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final User user = Provider.of<UserProvider>(context).getUser;
+    final UserProvider userProvider = Provider.of<UserProvider>(context);
 
     return _file == null
         ? Center(
@@ -128,46 +128,46 @@ class _AddPostStateScreen extends State<AddPostScreen> {
               backgroundColor: mobileBackgroundColor,
               leading: IconButton(
                 icon: const Icon(Icons.arrow_back),
-                onPressed: () {},
+                onPressed: clearImage,
               ),
               title: const Text('Post to'),
               centerTitle: false,
-              actions: [
+              actions: <Widget>[
                 TextButton(
                   onPressed: () => postImage(
-                    user.uid,
-                    user.username,
-                    user.photoUrl,
+                    userProvider.getUser.uid,
+                    userProvider.getUser.username,
+                    userProvider.getUser.photoUrl,
                   ),
                   child: const Text(
                     'Post',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 16,
+                      fontSize: 16.0,
                     ),
                   ),
                 )
               ],
             ),
             body: Column(
-              children: [
+              children: <Widget>[
                 _isLoading
                     ? const LinearProgressIndicator()
                     : const Padding(
-                        padding: EdgeInsets.only(top: 0),
+                        padding: EdgeInsets.only(top: 0.0),
                       ),
                 const Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     CircleAvatar(
                       backgroundImage: NetworkImage(
-                        user.photoUrl,
+                        userProvider.getUser.photoUrl,
                       ),
                     ),
                     SizedBox(
-                      width: MediaQuery.of(context).size.width * 0.45,
+                      width: MediaQuery.of(context).size.width * 0.3,
                       child: TextField(
                         controller: _descriptionController,
                         decoration: const InputDecoration(

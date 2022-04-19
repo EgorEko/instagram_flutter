@@ -31,7 +31,9 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
   }
 
   void onPageChanged(int page) {
-    _page = page;
+    setState(() {
+      _page = page;
+    });
   }
 
   @override
@@ -41,7 +43,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
         children: homeScreenItems,
         physics: const NeverScrollableScrollPhysics(),
         controller: pageController,
-        //onPageChanged: onPageChanged,
+        onPageChanged: onPageChanged,
       ),
       bottomNavigationBar: CupertinoTabBar(
         backgroundColor: mobileBackgroundColor,
@@ -83,6 +85,7 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
               backgroundColor: primaryColor),
         ],
         onTap: navigationTapped,
+        currentIndex: _page,
       ),
     );
   }

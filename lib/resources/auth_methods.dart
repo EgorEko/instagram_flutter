@@ -30,12 +30,11 @@ class AuthMethods {
       if (email.isNotEmpty ||
           password.isNotEmpty ||
           username.isNotEmpty ||
-          bio.isNotEmpty) {
+          bio.isNotEmpty ||
+          file != null) {
         // register user
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
-
-        print(cred.user!.uid);
 
         String photoUrl = await StorageMethods()
             .uploadImageToStorage('profilePics', file, false);
@@ -57,6 +56,8 @@ class AuthMethods {
             .set(user.toJson());
 
         res = 'success';
+      } else {
+        res = "Please enter all the fields";
       }
     } catch (err) {
       res = err.toString();
@@ -65,14 +66,18 @@ class AuthMethods {
   }
 
 // loggin in user
-  Future<String> loginUser(
-      {required String email, required String password}) async {
+  Future<String> loginUser({
+    required String email,
+    required String password,
+  }) async {
     String res = "Some error occurred";
 
     try {
       if (email.isNotEmpty || password.isNotEmpty) {
         await _auth.signInWithEmailAndPassword(
-            email: email, password: password);
+          email: email,
+          password: password,
+        );
         res = "success";
       } else {
         res = "Please enter all the fields";

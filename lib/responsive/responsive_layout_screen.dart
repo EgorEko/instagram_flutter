@@ -24,7 +24,8 @@ class _ResponsiveLayoutState extends State<ResponsiveLayout> {
   }
 
   addData() async {
-    UserProvider _userProvider = Provider.of(context, listen: false);
+    UserProvider _userProvider =
+        Provider.of<UserProvider>(context, listen: false);
     await _userProvider.refreshUser();
   }
 
@@ -34,9 +35,8 @@ class _ResponsiveLayoutState extends State<ResponsiveLayout> {
       builder: (context, constraints) {
         if (constraints.maxWidth > webScreenSize) {
           return widget.webScreenLayout;
-        } else {
-          return widget.mobileScreenLayout;
         }
+        return widget.mobileScreenLayout;
       },
     );
   }

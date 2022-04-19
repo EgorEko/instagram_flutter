@@ -76,7 +76,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 16, right: 8.0),
+                padding: const EdgeInsets.only(left: 16, right: 8),
                 child: TextField(
                   controller: _commentController,
                   decoration: InputDecoration(
@@ -100,7 +100,7 @@ class _CommentsScreenState extends State<CommentsScreen> {
                 });
               },
               child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 8),
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
                 child: const Text(
                   'Post',
                   style: TextStyle(
